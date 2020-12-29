@@ -11,7 +11,8 @@
   "private": false,
   "main": "app.js",
   "scripts": {
-    "start": "nodemon .",
+    "dev": "nodemon .",
+    "start": "node .",
     "style:check": "prettier --check .",
     "style:format": "prettier --write ."
   },
