@@ -8,6 +8,7 @@ const { getHtml: getHtmlV2 } = require("./server/v2/template");
 
 const app = express();
 const port = process.env.PORT || 4000;
+const browserWSEndpoint = process.env.BROWSER_ENDPOINT;
 const isHTMLDebug = process.env.HTML_DEBUG === "1";
 const cacheAge = 7 * dayInSecs;
 
@@ -27,7 +28,9 @@ app.get(
       }
 
       const { fileType } = parsedReq;
-      const screenshot = await getScreenshot(html, fileType, {});
+      const screenshot = await getScreenshot(html, fileType, {
+        browserWSEndpoint,
+      });
       res.statusCode = 200;
       res.setHeader("Content-Type", `image/${fileType}`);
       res.setHeader(
@@ -58,6 +61,7 @@ app.get(
 
       const { fileType } = parsedReq;
       const screenshot = await getScreenshot(html, fileType, {
+        browserWSEndpoint,
         width: parsedReq.width,
         height: parsedReq.height,
       });
