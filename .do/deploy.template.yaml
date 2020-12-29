@@ -1,0 +1,7 @@
+spec:
+  name: img-node
+  services:
+    - name: img
+      git:
+        branch: master
+        repo_clone_url: https://github.com/phuctm97/img-node
