@@ -16,17 +16,17 @@ This is an API that generates dynamic images for different purposes, is especial
 
 - etc.
 
-It's built with Node.js and configured to deploy to DigitalOcean App Platform with a single click, no setup required, no server to maintain.
+It's built with Node.js and configured to deploy to [DigitalOcean App Platform] with a single click, no setup required, no server to maintain.
 
 ## How should you use it?
 
-DigitalOcean is charging my credits, so feel free to test the API on my website, but please don't use it directly on yours. Instead:
+DigitalOcean is charging my credits, so feel free to test the API on my website but please don't use it directly on yours. Instead:
 
-- [Fork the repository](https://github.com/phuctm97/img/fork).
+- [Fork the repository](https://github.com/phuctm97/img-node/fork).
 
 - Make changes to fit your need (see below, it's easy).
 
-- Update the Deploy to DigitalOcean button's link to point to **your forked repositroy**.
+- Update the Deploy to DigitalOcean button's link to point to **your forked repository**.
 
 - Click it and deploy 🚀.
 
@@ -50,7 +50,7 @@ widths: string[];
 heights: string[];
 ```
 
-All query params are optional, a reasonable default will be used when necesssary.
+All query params are optional, a reasonable default will be used when necessary.
 
 ### V2
 
@@ -72,11 +72,11 @@ colors: string[];
 
 - **icons** are loaded from [Simple Icons], use names appearing on its website as inputs here. Not found icons will be ignored.
 
-- **colors** are valid CSS colors, or `default` to use Simple Icons's suggested colors, or `invert` to invert the default colors.
+- **colors** are valid CSS colors, or `default` to use Simple Icons' suggested colors, or `invert` to invert the default colors.
 
 - **target** helps generate images suitable for distribution to a specific platform, currently supports DEV.to (`devto`) and Open Graph (`og`).
 
-All query params are optional, a reasonable default will be used when neccesary.
+All query params are optional, a reasonable default will be used when necessary.
 
 **Example**:
 
@@ -86,7 +86,7 @@ https://{DOMAIN}/api/v2/%F0%9F%8E%86%20**Imagegen**%20as%20a%20Service?&icons=No
 
 ## Project structure
 
-The project uses [Puppeteer] to launch and capture screenshot from a headless Chrome. Responses are cached for 7 days to increase performance and reduce loads.
+The project uses [Puppeteer] to launch and capture screenshots from a headless Chrome. Responses are cached for 7 days to increase performance and reduce loads.
 
 - **server/v1**: parse API v1 requests and generate static HTML.
 
@@ -118,9 +118,9 @@ Heavily inspired by Vercel's [og-image].
 
 <!-- Links -->
 
-[img.phuctm97.com]: https://img.phuctm97.com
 [@phuctm97]: https://twitter.com/phuctm97
 [simple icons]: https://simpleicons.org
+[digitalocean app platform]: https://www.digitalocean.com/products/app-platform
 [twemoji]: https://twemoji.twitter.com
 [og-image]: https://github.com/vercel/og-image
 [puppeteer]: https://github.com/puppeteer/puppeteer
