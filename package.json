@@ -1,7 +1,7 @@
 {
-  "name": "img-digitalocean",
+  "name": "img-node",
   "version": "0.0.0",
-  "repository": "https://github.com/phuctm97/img-do",
+  "repository": "https://github.com/phuctm97/img-node",
   "author": {
     "name": "Minh-Phuc Tran",
     "email": "me@phuctm97.com",

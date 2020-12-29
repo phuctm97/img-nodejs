@@ -78,7 +78,7 @@ app.get(
 );
 
 app.get("*", (_, res) => {
-  res.redirect("https://github.com/phuctm97/img");
+  res.redirect("https://github.com/phuctm97/img-node");
 });
 
 app.listen(port, () => {
