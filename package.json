@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "private": false,
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",

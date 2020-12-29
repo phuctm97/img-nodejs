@@ -98,15 +98,15 @@ The project uses [Puppeteer] to launch and capture screenshots from a headless C
   - Change `parser.js` to update query API.
   - Change `template.js` to customize output images.
 
-- **images/avatar.jpg**: author's avatar used in V2.
+- **images/avatar.jpg**: author's avatar used in V2. Replace with yours.
 
 - **server/\*.js**: utils to process HTML and capture screenshots.
 
-- **app.js**: Express.js routes to receive requests (You probably won't need to change this).
+- **index.js**: Express.js routes to receive requests (you probably won't need to change this).
 
 - **fonts**: Fonts are loaded locally in **server/\*\*/\*.js**. Replace with your fonts (optionally).
 
-**Recommended approach**: copy **app.js#/api/v1** + **server/v1** or **app.js#/api/v2** + **server/v2** and make changes arcordingly, it won't accidentially crash your code this way.
+**Recommended approach**: copy **index.js**`#/api/v1` + **server/v1** (or **index.js**`#/api/v2` + **server/v2**) to v3, then make changes arcordingly. It won't accidentially crash your code this way.
 
 ## Author
 
