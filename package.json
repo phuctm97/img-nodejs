@@ -1,0 +1,32 @@
+{
+  "name": "img-digitalocean",
+  "version": "0.0.0",
+  "repository": "https://github.com/phuctm97/img-do",
+  "author": {
+    "name": "Minh-Phuc Tran",
+    "email": "me@phuctm97.com",
+    "url": "https://phuctm97.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon .",
+    "style:check": "prettier --check .",
+    "style:format": "prettier --write ."
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "marked": "^1.2.7",
+    "puppeteer": "^5.5.0",
+    "simple-icons": "^4.4.0",
+    "twemoji": "^13.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
+  }
+}
