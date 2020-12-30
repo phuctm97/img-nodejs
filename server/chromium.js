@@ -8,20 +8,25 @@ const localExePath =
 
 let cachedPage;
 
-const getPage = async (browserWSEndpoint = undefined) => {
+const getPage = async ({
+  remoteBrowser = undefined,
+  containerizedBrowser = undefined,
+}) => {
   if (cachedPage) return cachedPage;
 
   const browser = await puppeteer.launch(
-    browserWSEndpoint
-      ? {
-          args: [],
-          executablePath: localExePath,
-          headless: true,
-        }
-      : {
-          browserWSEndpoint: `ws://${browserWSEndpoint}`,
-          headless: true,
-        }
+    (remoteBrowser && {
+      browserWSEndpoint: remoteBrowser,
+      headless: true,
+    }) ||
+      (containerizedBrowser && {
+        executablePath: containerizedBrowser,
+        args: ["--no-sandbox", "--disable-gpu"],
+        headless: true,
+      }) || {
+        executablePath: localExePath,
+        headless: true,
+      }
   );
   cachedPage = await browser.newPage();
 
@@ -31,9 +36,14 @@ const getPage = async (browserWSEndpoint = undefined) => {
 const getScreenshot = async (
   html,
   type,
-  { browserWSEndpoint = undefined, width = 1200, height = 630 }
+  {
+    remoteBrowser = undefined,
+    containerizedBrowser = undefined,
+    width = 1200,
+    height = 630,
+  }
 ) => {
-  const page = await getPage(browserWSEndpoint);
+  const page = await getPage({ remoteBrowser, containerizedBrowser });
   await page.setViewport({ width, height });
   await page.setContent(html);
   return page.screenshot({ type });
