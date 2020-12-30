@@ -4,7 +4,7 @@ const getStringArray = (stringOrArray) => {
   return [stringOrArray];
 };
 
-const getNameAndExt = (str) => {
+const splitNameAndExtention = (str) => {
   const parts = str.split(".");
   let ext = "";
   let text = "";
@@ -21,5 +21,5 @@ const getNameAndExt = (str) => {
 
 module.exports = {
   getStringArray,
-  getNameAndExt,
+  splitNameAndExtention,
 };
