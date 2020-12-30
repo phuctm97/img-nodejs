@@ -21,7 +21,7 @@ const getPage = async ({
     }) ||
       (containerizedBrowser && {
         executablePath: containerizedBrowser,
-        args: ["--no-sandbox", "--disable-gpu"],
+        args: ["--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage"],
         headless: true,
       }) || {
         executablePath: localExePath,

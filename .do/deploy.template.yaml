@@ -1,0 +1,8 @@
+spec:
+  name: img-nodejs
+  services:
+    - name: api
+      dockerfile_path: .do/Dockerfile
+      github:
+        repo: phuctm97/img-node
+        branch: master
