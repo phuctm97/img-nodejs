@@ -1,19 +1,15 @@
-const path = require("path");
-const { readFileSync } = require("fs");
 const marked = require("marked");
 const twemoji = require("twemoji");
+const { readFont } = require("../asset");
 const { sanitizeHTML } = require("../sanitizer");
 
 const emojify = (text) => twemoji.parse(text, { folder: "svg", ext: ".svg" });
-
-const fontsDir = path.join(process.cwd(), "fonts");
-const readFont = (name) => readFileSync(path.join(fontsDir, name), "base64");
 
 const rglr = readFont("Inter-Regular.woff2");
 const bold = readFont("Inter-Bold.woff2");
 const mono = readFont("Vera-Mono.woff2");
 
-const getCss = (theme, fontSize, baseSize = "16px") => {
+const getCSS = (theme, textFontSize, htmlFontSize = "16px") => {
   let background = "white";
   let foreground = "black";
   let radial = "lightgray";
@@ -23,6 +19,7 @@ const getCss = (theme, fontSize, baseSize = "16px") => {
     foreground = "white";
     radial = "dimgray";
   }
+
   return `
     @font-face {
       font-family: 'Inter';
@@ -40,10 +37,10 @@ const getCss = (theme, fontSize, baseSize = "16px") => {
       font-family: 'Vera';
       font-style: normal;
       font-weight: normal;
-      src: url(data:font/woff2;charset=utf-8;base64,${mono}) format("woff2");
+      src: url(data:font/woff2;charset=utf-8;base64,${mono}) format('woff2');
     }
     html {
-      font-size: ${baseSize};
+      font-size: ${htmlFontSize};
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -90,14 +87,15 @@ const getCss = (theme, fontSize, baseSize = "16px") => {
     }
     .heading {
       font-family: 'Inter', sans-serif;
-      font-size: ${sanitizeHTML(fontSize)};
+      font-size: ${sanitizeHTML(textFontSize)};
       font-style: normal;
       color: ${foreground};
       line-height: 1.8;
     }`;
 };
 
-const getImage = (src, width = "auto", height = "18rem") => `<img
+const getImg = (src, width = "auto", height = "18rem") => `
+<img
   class="logo"
   alt="Generated Image"
   src="${sanitizeHTML(src)}"
@@ -106,20 +104,20 @@ const getImage = (src, width = "auto", height = "18rem") => `<img
 
 const getPlusSign = (i) => (i === 0 ? "" : '<div class="plus">+</div>');
 
-const getHTML = (req, isDebug = false) => {
-  const { text, theme, md, fontSize, images, widths, heights } = req;
+const getHTML = (props, isDebug = false) => {
+  const { text, theme, md, fontSize, images, widths, heights } = props;
   return `<!DOCTYPE html>
 <html>
   <meta charset="utf-8">
   <title>Generated Image</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    ${getCss(theme, fontSize, isDebug ? "16px" : "10px")}
+    ${getCSS(theme, fontSize, isDebug ? "16px" : "10px")}
   </style>
   <body>
     <div class="logo-wrapper">
       ${images
-        .map((img, i) => getPlusSign(i) + getImage(img, widths[i], heights[i]))
+        .map((img, i) => getPlusSign(i) + getImg(img, widths[i], heights[i]))
         .join("")}
     </div>
     <div class="heading">${emojify(

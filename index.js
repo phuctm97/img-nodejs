@@ -44,15 +44,15 @@ const handler = (fn) => (req, res, next) =>
 app.get(
   "/api/v1/:slug",
   handler(async (req, res) => {
-    const parsedReq = v1.parseRequest(req);
-    const html = v1.getHTML(parsedReq, isHTMLDebug);
+    const props = v1.parseRequest(req);
+    const html = v1.getHTML(props, isHTMLDebug);
     if (isHTMLDebug) {
       res.setHeader("Content-Type", "text/html");
       res.end(html);
       return;
     }
 
-    const { fileType } = parsedReq;
+    const { fileType } = props;
     const screenshot = await getScreenshot(html, fileType, browserOpts);
     renderScreenshot(res, screenshot, fileType);
   })
@@ -61,19 +61,19 @@ app.get(
 app.get(
   "/api/v2/:slug",
   handler(async (req, res) => {
-    const parsedReq = v2.parseRequest(req);
-    const html = v2.getHTML(parsedReq, isHTMLDebug);
+    const props = v2.parseRequest(req);
+    const html = v2.getHTML(props, isHTMLDebug);
     if (isHTMLDebug) {
       res.setHeader("Content-Type", "text/html");
       res.end(html);
       return;
     }
 
-    const { fileType } = parsedReq;
+    const { fileType } = props;
     const screenshot = await getScreenshot(html, fileType, {
       ...browserOpts,
-      width: parsedReq.width,
-      height: parsedReq.height,
+      width: props.width,
+      height: props.height,
     });
     renderScreenshot(res, screenshot, fileType);
   })
