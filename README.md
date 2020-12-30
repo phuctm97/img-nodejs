@@ -12,7 +12,7 @@ Imagegen (image generator) as a Service, built with [Node.js], [Docker], and
 
 [![Deploy to DO][do button]][do deploy url]
 
-> ℹ️ If you prefer Next.js + Serverless over Node.js + Docker, [checkout this
+> ℹ️ If you prefer Next.js + Serverless to Node.js + Docker, [checkout this
 > repository][next-based repo].
 
 ## What is this?
