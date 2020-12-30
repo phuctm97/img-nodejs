@@ -2,6 +2,7 @@
 
 # 🌌 Imagegen as a Service (Node.js)
 
+[![Checks status][checks status]][checks url]
 [![Dependabot status][dependabot status]][dependabot url]
 [![Code style][code style]][code style url]
 [![License info][license info]][license url]
@@ -196,6 +197,8 @@ Heavily inspired by Vercel's [og-image].
 
 [cover image]:
   https://img.phuctm97.com/api/v2/%F0%9F%97%BE%20**Imagegen**%20as%20a%20Service?&icons=Node.js&icons=Docker&icons=DigitalOcean
+[checks status]:
+  https://img.shields.io/github/checks-status/phuctm97/img-nodejs/master?logo=Github
 [dependabot status]:
   https://img.shields.io/badge/dependabot-enabled-025e8c?logo=Dependabot
 [license info]: https://img.shields.io/github/license/phuctm97/img
@@ -203,6 +206,8 @@ Heavily inspired by Vercel's [og-image].
   https://img.shields.io/badge/code%20style-prettier-F7B93E?logo=Prettier
 [do button]:
   https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg
+[checks url]:
+  https://github.com/phuctm97/img-nodejs/actions?query=workflow%3APR+branch%3Amaster
 [dependabot url]:
   https://github.com/phuctm97/img/blob/master/.github/dependabot.yml
 [code style url]: /.prettierrc.json
