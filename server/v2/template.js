@@ -7,8 +7,7 @@ const simpleIcons = require("simple-icons");
 const emojify = (text) => twemoji.parse(text, { folder: "svg", ext: ".svg" });
 
 const fontsDir = path.join(process.cwd(), "fonts");
-const readFont = (name) =>
-  readFileSync(path.join(fontsDir, name)).toString("base64");
+const readFont = (name) => readFileSync(path.join(fontsDir, name), "base64");
 
 const rglr = readFont("Inter-Regular.woff2");
 const bold = readFont("Inter-Bold.woff2");
@@ -166,7 +165,7 @@ const getLogo = (name, color) => {
 
 const getPlusSign = (i) => (i === 0 ? "" : '<div class="plus">+</div>');
 
-const getHtml = (req) => {
+const getHTML = (req) => {
   const {
     text,
     theme,
@@ -217,6 +216,4 @@ const getHtml = (req) => {
 </html>`;
 };
 
-module.exports = {
-  getHtml,
-};
+module.exports = getHTML;
