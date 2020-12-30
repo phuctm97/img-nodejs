@@ -1,4 +1,4 @@
-const { getStringArray } = require("../../utils/primitive");
+const { getNameAndExt, getStringArray } = require("../../utils/primitive");
 
 const parseRequest = (req) => {
   const { params, query } = req;
@@ -9,18 +9,7 @@ const parseRequest = (req) => {
   if (Array.isArray(fontSize)) throw new Error("Expected a single fontSize.");
   if (Array.isArray(theme)) throw new Error("Expected a single theme.");
 
-  const parts = slug.split(".");
-  let ext = "";
-  let text = "";
-  if (parts.length === 0) {
-    text = "";
-  } else if (parts.length === 1) {
-    text = parts[0];
-  } else {
-    ext = parts.pop() || "";
-    text = parts.join(".");
-  }
-
+  const [text, ext] = getNameAndExt(slug);
   const parsedReq = {
     fileType: ext === "jpeg" || ext === "jpg" ? "jpeg" : "png",
     text: decodeURIComponent(text),
@@ -34,6 +23,4 @@ const parseRequest = (req) => {
   return parsedReq;
 };
 
-module.exports = {
-  parseRequest,
-};
+module.exports = parseRequest;

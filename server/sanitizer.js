@@ -7,9 +7,9 @@ const sanitizedTokens = {
   "/": "&#x2F;",
 };
 
-const sanitizeHtml = (html) =>
+const sanitizeHTML = (html) =>
   String(html).replace(/[&<>"'\/]/g, (key) => sanitizedTokens[key]);
 
 module.exports = {
-  sanitizeHtml,
+  sanitizeHTML,
 };
