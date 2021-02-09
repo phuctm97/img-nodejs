@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "marked": "^1.2.8",
     "puppeteer-core": "^5.5.0",
-    "simple-icons": "^4.9.0",
+    "simple-icons": "^4.10.0",
     "twemoji": "^13.0.1"
   },
   "devDependencies": {
