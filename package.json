@@ -22,7 +22,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "marked": "^2.0.5",
-    "puppeteer-core": "^5.5.0",
+    "puppeteer-core": "^9.1.1",
     "simple-icons": "^4.25.0",
     "twemoji": "^13.0.2"
   },
