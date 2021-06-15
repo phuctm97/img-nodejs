@@ -1235,10 +1235,10 @@ signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-simple-icons@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-5.0.0.tgz#c47d06ee4efd62cc610565678bfbcac97bebf987"
-  integrity sha512-GO1/oSE8MRAoxd+S8L9JHh48lJ+C2a5Uvq2+lF2bImFG/7joAEA7MfzSiTTcyAW6gVTEyIqe6OiGOQIHwdq3ew==
+simple-icons@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-5.2.0.tgz#ed77c74fe8b22813aa8b7cdead8b8e5fa66f474b"
+  integrity sha512-lRKW77ntIlvX9xy92OJqfIvYnm7Extz1GvKWFpVH/xStUO54QiAzYaqz13C8PQSfVP9gLCSA7ONsAMWnfqxu3A==
 
 "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
