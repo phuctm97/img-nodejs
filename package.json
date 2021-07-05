@@ -27,7 +27,7 @@
     "twemoji": "^13.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.9",
     "prettier": "^2.3.1"
   }
 }
